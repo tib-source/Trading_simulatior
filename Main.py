@@ -1,34 +1,3 @@
-"""
-import pandas as pd
-import matplotlib.pyplot as plt
-from alpha_vantage.timeseries import TimeSeries
-import time
-
-api_key = "WFUDQS2K3OG9M8JB"
-
-ts = TimeSeries(key=api_key, output_format="pandas")
-data, meta_data = ts.get_intraday(symbol="GME", interval="60min", outputsize="full")
-data.to_excel("GME_stock.xlsx")
-time_list = [str(x).split(" ")[1][:5] for x in data.index]
-x = (time_list)
-y = data["1. open"]
-plt.plot(x,y)
-plt.xlabel("Time")
-plt.ylabel("Stock Price in USD($)")
-plt.show()
-
-"""
-
-"""
-
-Trading_simulator 
-- track amount
-- show number of stocks in a portfolio
-- investement - a list that tracks the value of your stocks over the day 
-- Money
-- transaction_cost = 0.075 percent of 
- 
-"""
 
 import tkinter as tk
 from tkinter import *
@@ -132,20 +101,7 @@ Sell_button.place(rely = 0.25, relx = 0.78)
 root.mainloop()
 
 
-"""
 
-ammount = input("Determine your starting ammount")
-portfolio = 0
-money_end = ammount
-investement = []
-transaction_cost = 0.075
-
-prompt = input("What stock would you like to buy")
-stock = Share(str(prompt))
-price = stock.get_price()
-quantity = input("how many shares would you like to buy")
-
-"""
 
 
 
